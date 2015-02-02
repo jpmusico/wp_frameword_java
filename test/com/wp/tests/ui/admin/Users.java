@@ -23,7 +23,7 @@ public class Users extends BaseTestSuite{
 
 		//Act
 		LoginPage login = PageFactory.initElements(super.driver, LoginPage.class);
-		DashBoardPage dashboard = (DashBoardPage) login.doLogin("test", "test");
+		DashBoardPage dashboard = (DashBoardPage) login.doLogin("admin", "test");
 		UsersPage users = dashboard.openUsersPage();
 		users.clickNewUserAddButton();	
 		users.fillUserRequiredData(user, true);

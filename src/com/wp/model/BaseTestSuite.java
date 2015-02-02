@@ -5,6 +5,8 @@ import org.junit.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import com.wp.util.ConfigurationProvider;
+
 import junit.framework.TestSuite;
 
 public class BaseTestSuite extends TestSuite{
@@ -14,7 +16,7 @@ public class BaseTestSuite extends TestSuite{
 	@Before
 	public void setUp(){
 		this.driver=new FirefoxDriver();
-		this.driver.get("http://192.168.59.103:8080/wp-login.php");
+		this.driver.get(ConfigurationProvider.getInstance().getLocalUrl());
 	}
 	
 	@After
